@@ -10,16 +10,22 @@ using UnityEngine.AI;
 /// </summary>
 public class HumanRepopulate : MonoBehaviour {
 
-	public GameObject baby;
+	public GameObject[] baby;
 
 	public float r_Distance;
-	public float r_Duration;
 	public float r_SightDistance;
+	public float r_Duration;
+	public float r_CoolDownLength;
+
+	public bool isFemale;
+
+	public int m_ageRange = 10;
 
 	public Vector2 r_AgeRange;
 
 	private bool canReproduce = false;
 	private bool grownUp = false;
+	private bool destinationSet = false;
 
 	private float r_Timer;
 	private float r_CoolDown;
@@ -42,63 +48,87 @@ public class HumanRepopulate : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
 	{	
-		if (c_Stats.c_Age >= r_AgeRange.x && c_Stats.c_Age < r_AgeRange.y && canReproduce)//check if within age range and mate nearby
+		if (c_Stats.c_Age >= r_AgeRange.x && c_Stats.c_Age < r_AgeRange.y)//check if within age range and mate nearby
 		{
-
 			if (!grownUp)
 			{
 				CheckIfPartnerIsNear();
 				grownUp = true;
 			}
-
 			//if not within reproduciton range go to them
-			if (Vector3.Distance(transform.position, mate.position) > r_Distance)
+			if (canReproduce)
 			{
-				agent.isStopped = false;
-				GoToPartner(mate.position);
+				if (Vector3.Distance(transform.position, mate.position) > r_Distance)
+				{
+					agent.isStopped = false;
+					GoToPartner(mate.position);
+				}
+				//then reproduce 
+				else
+				{
+					agent.isStopped = true;
+					destinationSet = false;
+					Reproduce();
+				}
 			}
-			//then reproduce 
-			else
-			{
-				agent.isStopped = true;
-				Reproduce();
-			}			
-		}
+		}	
+	}
 
-		if (!canReproduce && mate!=null)
+	private void Update()
+	{
+		if (!canReproduce && mate != null)
 		{
-			canReproduce = Vector3.Distance(transform.position, mate.position) >= r_SightDistance && m_Stats.c_Age>=r_AgeRange.x && m_Stats.c_Age >= r_AgeRange.y;
+			if (r_CoolDown >= r_CoolDownLength)
+			{
+				canReproduce = Vector3.Distance(transform.position, mate.position) <= r_SightDistance && m_Stats.c_Age >= r_AgeRange.x && m_Stats.c_Age <= r_AgeRange.y;
+			}
 		}
+		r_CoolDown += Time.deltaTime;
 	}
 
 	void GoToPartner(Vector3 target)
 	{
 		//walk to
-		agent.SetDestination(target);
+		if (!destinationSet)
+		{
+			agent.destination = target;
+			destinationSet = true;
+		}
 	}
 
 	void CheckIfPartnerIsNear()
 	{
 		//get nearest partner then check its position
-
-		//first check the closest opposite sex partner that is the same age
-
-
-
-		//have it as your mate and check its position until its in sight range
+		float dist = 9999999999;
+		for(int i = 0; i < population.humans.Count; i++)
+		{
+			if (population.humans[i].c_Age >= r_AgeRange.x - m_ageRange && population.humans[i].c_Age < r_AgeRange.x + m_ageRange)
+			{
+				float newDist = Vector3.Distance(population.humans[i].transform.position, transform.position);
+				if (newDist < dist && newDist > 1f)
+				{
+					dist = newDist;
+					mate = population.humans[i].GetComponent<Transform>();
+					m_Stats = population.humans[i].GetComponent<HumanCurrentStats>();
+				}
+			}
+		}
+		
 	}
 
 	void Reproduce()
 	{
-		r_Timer += Time.deltaTime;
-		if(r_Timer >= r_Duration)
+		if (isFemale)
 		{
-			Instantiate(baby, transform.position, Quaternion.identity);
-
-			//once reproduction is done set timer to 0 and reproduce again
-			r_Timer = 0;
-			currentBabies++;
-			r_CoolDown = 0;
+			r_Timer += Time.deltaTime;
+			if (r_Timer >= r_Duration)
+			{
+				Instantiate(baby[Random.Range(0, baby.Length)], transform.position + Vector3.forward, Quaternion.identity);
+				//once reproduction is done set timer to 0 and reproduce again
+				r_Timer = 0;
+				currentBabies++;
+				r_CoolDown = 0;
+			}
 		}
 	}
 }
