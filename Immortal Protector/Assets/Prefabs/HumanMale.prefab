@@ -289,8 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d323439a1fbf83418db66d462f0946c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatingRange: 0
-  seesFoodRange: 0
+  eatingRange: 3
+  seesFoodRange: 50
 --- !u!114 &114484262966587648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,11 +332,12 @@ MonoBehaviour:
   baby:
   - {fileID: 1683493166638804}
   - {fileID: 1941767075815182, guid: 40397dc4aac1bb042b31be28705b5e0e, type: 2}
-  r_Distance: 5
+  r_Distance: 2
   r_SightDistance: 100
   r_Duration: 2
   r_CoolDownLength: 4
   isFemale: 0
+  isReproducing: 0
   m_ageRange: 8
   r_AgeRange: {x: 10, y: 20}
 --- !u!195 &195498088999111342

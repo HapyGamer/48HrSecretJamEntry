@@ -18,6 +18,8 @@ public class HumanRepopulate : MonoBehaviour {
 	public float r_CoolDownLength;
 
 	public bool isFemale;
+	[HideInInspector]
+	public bool isReproducing = false;
 
 	public int m_ageRange = 10;
 
@@ -58,6 +60,7 @@ public class HumanRepopulate : MonoBehaviour {
 			//if not within reproduciton range go to them
 			if (canReproduce)
 			{
+				isReproducing = true;
 				if (Vector3.Distance(transform.position, mate.position) > r_Distance)
 				{
 					agent.isStopped = false;
@@ -128,6 +131,8 @@ public class HumanRepopulate : MonoBehaviour {
 				r_Timer = 0;
 				currentBabies++;
 				r_CoolDown = 0;
+				canReproduce = false;
+				isReproducing = false;
 			}
 		}
 	}

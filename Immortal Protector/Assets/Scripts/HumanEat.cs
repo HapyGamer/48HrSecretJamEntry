@@ -11,13 +11,20 @@ public class HumanEat : MonoBehaviour {
 	public float eatingRange;
 	public float seesFoodRange;
 
+	private HumanRepopulate repopulate;
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
+	}
+
+	public void FoodNearBy(Vector3 foodPosition)
+	{
+
 	}
 }

@@ -293,7 +293,8 @@ MonoBehaviour:
   r_SightDistance: 100
   r_Duration: 2
   r_CoolDownLength: 4
-  isFemale: 0
+  isFemale: 1
+  isReproducing: 0
   m_ageRange: 8
   r_AgeRange: {x: 10, y: 20}
 --- !u!114 &114696400302233964
