@@ -25,6 +25,8 @@ public class HumanRepopulate : MonoBehaviour {
 
 	public Vector2 r_AgeRange;
 
+	public AudioClip reproduceSound;
+
 	private bool canReproduce = false;
 	private bool grownUp = false;
 	private bool destinationSet = false;
@@ -49,32 +51,35 @@ public class HumanRepopulate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate ()
-	{	
-		if (c_Stats.c_Age >= r_AgeRange.x && c_Stats.c_Age < r_AgeRange.y)//check if within age range and mate nearby
+	{
+		if (currentBabies >= c_Stats.c_maxBabies)
 		{
-			if (!grownUp)
+			if (c_Stats.c_Age >= r_AgeRange.x && c_Stats.c_Age < r_AgeRange.y)//check if within age range and mate nearby
 			{
-				CheckIfPartnerIsNear();
-				grownUp = true;
-			}
-			//if not within reproduciton range go to them
-			if (canReproduce)
-			{
-				isReproducing = true;
-				if (Vector3.Distance(transform.position, mate.position) > r_Distance)
+				if (!grownUp)
 				{
-					agent.isStopped = false;
-					GoToPartner(mate.position);
+					CheckIfPartnerIsNear();
+					grownUp = true;
 				}
-				//then reproduce 
-				else
+				//if not within reproduciton range go to them
+				if (canReproduce)
 				{
-					agent.isStopped = true;
-					destinationSet = false;
-					Reproduce();
+					isReproducing = true;
+					if (Vector3.Distance(transform.position, mate.position) > r_Distance)
+					{
+						agent.isStopped = false;
+						GoToPartner(mate.position);
+					}
+					//then reproduce 
+					else
+					{
+						agent.isStopped = true;
+						destinationSet = false;
+						Reproduce();
+					}
 				}
 			}
-		}	
+		}
 	}
 
 	private void Update()
@@ -126,7 +131,8 @@ public class HumanRepopulate : MonoBehaviour {
 			r_Timer += Time.deltaTime;
 			if (r_Timer >= r_Duration)
 			{
-				Instantiate(baby[Random.Range(0, baby.Length)], transform.position + Vector3.forward, Quaternion.identity);
+				var newHuman = Instantiate(baby[Random.Range(0, baby.Length)], transform.position + Vector3.forward, Quaternion.identity);
+				population.AddHuman(newHuman);
 				//once reproduction is done set timer to 0 and reproduce again
 				r_Timer = 0;
 				currentBabies++;

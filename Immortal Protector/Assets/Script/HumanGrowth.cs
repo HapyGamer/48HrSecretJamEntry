@@ -13,6 +13,10 @@ public class HumanGrowth : MonoBehaviour {
 	public float maxSpeedAge;
 	public float hungerDepletedPerSecond;
 
+	public AudioClip adult;
+	public AudioClip teen;
+	public AudioClip childCreature;
+
 	private HumanCurrentStats c_Stats;
 	private HumanDeath death;
 	private Renderer mat;

@@ -26,10 +26,11 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));//x z movement
 		controller.Move(move * Time.deltaTime * speed);//move in x or z direction
-		if (move!= Vector3.zero)
+		if (move != Vector3.zero)
 		{
 			transform.forward = move;//turn if not facing right way
 		}
+		
 
 		velocity.y += Gravity * Time.deltaTime;//add gravity to velocity (could just be a single variable) (no gravity in character controller)
 
