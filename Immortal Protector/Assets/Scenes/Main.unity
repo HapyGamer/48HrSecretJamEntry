@@ -343,6 +343,8 @@ GameObject:
   - component: {fileID: 460633604}
   - component: {fileID: 460633603}
   - component: {fileID: 460633605}
+  - component: {fileID: 460633607}
+  - component: {fileID: 460633606}
   m_Layer: 0
   m_Name: HumanMale
   m_TagString: HumanMale
@@ -454,6 +456,7 @@ MonoBehaviour:
   c_Age: 0
   c_Speed: 0
   c_Hunger: 50
+  c_maxBabies: 0
 --- !u!114 &460633604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +482,34 @@ MonoBehaviour:
   agingPerSecond: 1
   maxSpeedAge: 40
   hungerDepletedPerSecond: 0
+--- !u!114 &460633606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 460633597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d323439a1fbf83418db66d462f0946c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatingRange: 0
+  seesFoodRange: 0
+--- !u!114 &460633607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 460633597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dec24cb62b78a40a42f849666801b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reproduceDistance: 0
+  reproduceDuration: 0
+  reproduceSightDistance: 0
+  reproductionAgeRange: {x: 0, y: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,13 +581,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 250, y: 28, z: 250}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 250, y: 24, z: 242.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958c1752484196b4490ee66b1b575a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothing: 3
+  smoothing: 5
 --- !u!1 &776824352
 GameObject:
   m_ObjectHideFlags: 0

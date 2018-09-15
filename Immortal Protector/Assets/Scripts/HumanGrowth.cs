@@ -8,7 +8,7 @@ public class HumanGrowth : MonoBehaviour {
 	public float maxSpeedAge;
 	public float hungerDepletedPerSecond;
 
-	private HumanCurrentStats humanCurrentStats;
+	private HumanCurrentStats c_Stats;
 	private HumanDeath death;
 	private Renderer mat;
 
@@ -20,14 +20,14 @@ public class HumanGrowth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		humanCurrentStats = GetComponent<HumanCurrentStats>();
+		c_Stats = GetComponent<HumanCurrentStats>();
 		death = GetComponent<HumanDeath>();
 		mat = GetComponent<Renderer>();
 
 		materialColor = mat.material.color;
 
-		speedIncreaseRate = humanCurrentStats.stats.maxSpeed / maxSpeedAge;
-		speedDecreaseRate = (humanCurrentStats.stats.maxSpeed - humanCurrentStats.stats.minSpeed) / (humanCurrentStats.stats.maxAge - maxSpeedAge);
+		speedIncreaseRate = c_Stats.stats.maxSpeed / maxSpeedAge;
+		speedDecreaseRate = (c_Stats.stats.maxSpeed - c_Stats.stats.minSpeed) / (c_Stats.stats.maxAge - maxSpeedAge);
 	}
 	
 	// Update is called once per frame
@@ -35,26 +35,26 @@ public class HumanGrowth : MonoBehaviour {
 	{
 		CheckIfHumanIsDead();
 
-		humanCurrentStats.c_Age += agingPerSecond * Time.deltaTime;
-		humanCurrentStats.c_Hunger -= hungerDepletedPerSecond * Time.deltaTime;
+		c_Stats.c_Age += agingPerSecond * Time.deltaTime;
+		c_Stats.c_Hunger -= hungerDepletedPerSecond * Time.deltaTime;
 
-		mat.material.color = Color.Lerp(materialColor, black, humanCurrentStats.c_Age/humanCurrentStats.stats.maxAge);
+		mat.material.color = Color.Lerp(materialColor, black, c_Stats.c_Age/c_Stats.stats.maxAge);
 
-		if (humanCurrentStats.c_Age >= maxSpeedAge)
+		if (c_Stats.c_Age >= maxSpeedAge)
 		{
-			humanCurrentStats.c_Speed -= speedDecreaseRate * humanCurrentStats.c_Age;
+			c_Stats.c_Speed -= speedDecreaseRate * c_Stats.c_Age;
 		}
 
 		else
 		{
-			humanCurrentStats.c_Speed = speedIncreaseRate * humanCurrentStats.c_Age;
+			c_Stats.c_Speed = speedIncreaseRate * c_Stats.c_Age;
 		}
 		
 	}
 
 	void CheckIfHumanIsDead()
 	{
-		if (humanCurrentStats.c_Age >= humanCurrentStats.stats.maxAge || humanCurrentStats.c_Hunger <= 0)
+		if (c_Stats.c_Age >= c_Stats.stats.maxAge || c_Stats.c_Hunger <= 0)
 		{
 			death.Death();
 		}
