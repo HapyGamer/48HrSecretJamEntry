@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HumanGrowth : MonoBehaviour {
 
+
+	/// <summary>
+	/// TO DO: MAKE IT SO THE COLOURS INTERPOLATE TO EACH COLOUR WHERE THE FINAL COLOUR IS BLACK MEANING DEATH
+	/// </summary>
+
 	public float agingPerSecond;
 	public float maxSpeedAge;
 	public float hungerDepletedPerSecond;
@@ -12,8 +17,8 @@ public class HumanGrowth : MonoBehaviour {
 	private HumanDeath death;
 	private Renderer mat;
 
-	private Color black = Color.black;
-	private Color materialColor;
+	//private Color black = Color.black;
+	//private Color materialColor;
 
 	private float speedIncreaseRate;
 	private float speedDecreaseRate;
@@ -24,7 +29,7 @@ public class HumanGrowth : MonoBehaviour {
 		death = GetComponent<HumanDeath>();
 		mat = GetComponent<Renderer>();
 
-		materialColor = mat.material.color;
+		//materialColor = mat.material.color;
 
 		speedIncreaseRate = c_Stats.stats.maxSpeed / maxSpeedAge;
 		speedDecreaseRate = (c_Stats.stats.maxSpeed - c_Stats.stats.minSpeed) / (c_Stats.stats.maxAge - maxSpeedAge);
@@ -38,7 +43,7 @@ public class HumanGrowth : MonoBehaviour {
 		c_Stats.c_Age += agingPerSecond * Time.deltaTime;
 		c_Stats.c_Hunger -= hungerDepletedPerSecond * Time.deltaTime;
 
-		mat.material.color = Color.Lerp(materialColor, black, c_Stats.c_Age/c_Stats.stats.maxAge);
+		//mat.material.color = Color.Lerp(materialColor, black, c_Stats.c_Age/c_Stats.stats.maxAge);
 
 		if (c_Stats.c_Age >= maxSpeedAge)
 		{
