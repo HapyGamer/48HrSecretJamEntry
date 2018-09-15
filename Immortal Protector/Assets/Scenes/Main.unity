@@ -191,6 +191,11 @@ GameObject:
   - component: {fileID: 200633482}
   - component: {fileID: 200633481}
   - component: {fileID: 200633480}
+  - component: {fileID: 200633489}
+  - component: {fileID: 200633488}
+  - component: {fileID: 200633487}
+  - component: {fileID: 200633486}
+  - component: {fileID: 200633485}
   m_Layer: 0
   m_Name: HumanFemale
   m_TagString: HumanFemale
@@ -287,6 +292,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &200633485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200633479}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dec24cb62b78a40a42f849666801b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baby: {fileID: 0}
+  r_Distance: 0
+  r_Duration: 0
+  r_SightDistance: 0
+  r_AgeRange: {x: 0, y: 0}
+--- !u!114 &200633486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200633479}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d323439a1fbf83418db66d462f0946c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatingRange: 0
+  seesFoodRange: 0
+--- !u!114 &200633487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200633479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4973a428204b434593dd43e3e85f405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agingPerSecond: 1
+  maxSpeedAge: 40
+  hungerDepletedPerSecond: 0
+--- !u!114 &200633488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200633479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d89699d61dcb9247b9a6e6cbfbb9f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &200633489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200633479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad76d3bf6d6ad241add5a2f47edda3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 166ecc5980886f040a84dcad647d26c9, type: 2}
+  c_Age: 0
+  c_Speed: 0
+  c_Hunger: 50
+  c_maxBabies: 0
 --- !u!1 &339597794
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +403,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 500, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &395136152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395136154}
+  - component: {fileID: 395136153}
+  m_Layer: 0
+  m_Name: PopulationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &395136153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395136152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f4fa48b81df5d45ae46671482ab903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  humans: []
+--- !u!4 &395136154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395136152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &460633597
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +604,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460633597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d323439a1fbf83418db66d462f0946c, type: 3}
   m_Name: 
@@ -501,15 +617,16 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460633597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1dec24cb62b78a40a42f849666801b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reproduceDistance: 0
-  reproduceDuration: 0
-  reproduceSightDistance: 0
-  reproductionAgeRange: {x: 0, y: 0}
+  baby: {fileID: 0}
+  r_Distance: 0
+  r_Duration: 0
+  r_SightDistance: 0
+  r_AgeRange: {x: 0, y: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
