@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -709,6 +709,7 @@ GameObject:
   - component: {fileID: 1515187268}
   - component: {fileID: 1515187267}
   - component: {fileID: 1515187272}
+  - component: {fileID: 1515187273}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -820,6 +821,17 @@ MonoBehaviour:
   - name: Fruit
     item: {fileID: 1838294497358560, guid: 3fd7427e00078d04c96a987183389af2, type: 2}
     howMuchIHave: 0
+--- !u!114 &1515187273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515187266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f8f7ce0616c1f4aa7bc54592614760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1556129795
 Prefab:
   m_ObjectHideFlags: 0
@@ -891,6 +903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1836320738}
   - component: {fileID: 1836320739}
+  - component: {fileID: 1836320740}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1006,3 +1019,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1836320740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836320737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bbf6b3de16c804391a5cddece7c7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []

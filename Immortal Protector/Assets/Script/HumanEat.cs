@@ -80,6 +80,10 @@ public class HumanEat : MonoBehaviour {
 	public void FoodNearBy()
 	{
 		//call this when a food is placed or finished eating food
+		if (nearestFood != null)
+		{
+			foods.AddFood(nearestFood.gameObject);
+		}
 		//CHECK ALL FOODS
 		float dist = 999999;
 		for(int i = 0; i < foods.food.Count; i++)

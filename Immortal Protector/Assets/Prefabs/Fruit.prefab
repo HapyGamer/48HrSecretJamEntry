@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33456796638381816}
   - component: {fileID: 23700706927671910}
   - component: {fileID: 135809981265190610}
+  - component: {fileID: 114708746633710182}
   m_Layer: 0
   m_Name: Fruit
-  m_TagString: Untagged
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838294497358560}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114708746633710182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838294497358560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f952f6ad2f83b874d90530850e52f8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  howMuchToAdd: 1
+  nameOfItem: Fruit
 --- !u!135 &135809981265190610
 SphereCollider:
   m_ObjectHideFlags: 1
