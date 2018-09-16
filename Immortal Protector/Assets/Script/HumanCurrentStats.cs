@@ -8,6 +8,7 @@ public class HumanCurrentStats : MonoBehaviour {
 	public float c_Age = 0;
 	public float c_Speed = 0;
 	public float c_Hunger = 50;
-	public float c_maxBabies;
+	public float c_maxBabies = 0;
+	public float c_maxAgeIncrease = 0;
 	
 }

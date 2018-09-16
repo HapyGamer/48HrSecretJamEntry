@@ -63,7 +63,7 @@ public class HumanGrowth : MonoBehaviour {
 
 	void CheckIfHumanIsDead()
 	{
-		if (c_Stats.c_Age >= c_Stats.stats.maxAge || c_Stats.c_Hunger <= 0)
+		if (c_Stats.c_Age >= c_Stats.stats.maxAge + c_Stats.c_maxAgeIncrease || c_Stats.c_Hunger <= 0)
 		{
 			death.Death();
 		}
