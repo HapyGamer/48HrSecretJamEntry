@@ -29,7 +29,6 @@ public class HumanRepopulate : MonoBehaviour {
 
 	private bool canReproduce = false;
 	private bool grownUp = false;
-	private bool destinationSet = false;
 
 	private float r_Timer;
 	private float r_CoolDown;
@@ -40,6 +39,7 @@ public class HumanRepopulate : MonoBehaviour {
 	private HumanCurrentStats c_Stats;
 	private AudioManager audioManager;
 	private NavMeshAgent agent;
+	private ShopManager shop;
 	private PopulationManager population;
 
 	// Use this for initialization
@@ -47,8 +47,10 @@ public class HumanRepopulate : MonoBehaviour {
 	{
 		c_Stats = GetComponent<HumanCurrentStats>();
 		agent = GetComponent<NavMeshAgent>();
+		shop = FindObjectOfType<ShopManager>().GetComponent<ShopManager>();
 		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 		population = FindObjectOfType<PopulationManager>().GetComponent<PopulationManager>();
+		r_SightDistance += shop.s_r_sightRangeIncrease;
 	}
 	
 	// Update is called once per frame
@@ -70,14 +72,13 @@ public class HumanRepopulate : MonoBehaviour {
 					if (Vector3.Distance(transform.position, mate.position) > r_Distance)
 					{
 						agent.isStopped = false;
-						GoToPartner(mate.position);
+						agent.destination = mate.position;
 					}
 					//then reproduce 
 					else
 					{
 						agent.isStopped = true;
 						isReproducing = false;
-						destinationSet = false;
 						Reproduce();
 					}
 				}
@@ -99,16 +100,6 @@ public class HumanRepopulate : MonoBehaviour {
 			isReproducing = false;
 		}
 		r_CoolDown += Time.deltaTime;
-	}
-
-	void GoToPartner(Vector3 target)
-	{
-		//walk to
-		if (!destinationSet)
-		{
-			agent.destination = target;
-			destinationSet = true;
-		}
 	}
 
 	void CheckIfPartnerIsNear()

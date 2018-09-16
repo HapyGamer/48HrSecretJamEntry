@@ -10,22 +10,19 @@ public class PowerUpHuman : MonoBehaviour {
 	public int maxAgeIncrease;
 	public int hungerIncrease;
 
-	private PopulationManager population;
+	private ShopManager shop;
 
 	// Use this for initialization
 	void Start () {
-		population = FindObjectOfType<PopulationManager>().GetComponent<PopulationManager>();
+		shop = FindObjectOfType<ShopManager>().GetComponent<ShopManager>();
 	}
 	
 	public void PowerUp()
 	{
-		foreach(HumanCurrentStats h in population.humans)
-		{
-			h.c_maxAgeIncrease += maxAgeIncrease;
-			h.c_maxBabies += babiesIncrease;
-			h.GetComponent<HumanEat>().seesFoodRange += h_sightRangeIncrease;
-			h.GetComponent<HumanEat>().h_Recovery += hungerIncrease;
-			h.GetComponent<HumanRepopulate>().r_SightDistance += r_sightRangeIncrease;
-		}
+		shop.s_babiesIncrease += babiesIncrease;
+		shop.s_hungerIncrease += hungerIncrease;
+		shop.s_h_sightRangeIncrease += h_sightRangeIncrease;
+		shop.s_maxAgeIncrease += maxAgeIncrease;
+		shop.s_r_sightRangeIncrease += r_sightRangeIncrease;
 	}
 }

@@ -24,7 +24,10 @@ public class PickMeUp : MonoBehaviour {
 		{
 			player.AddItems(howMuchToAdd, nameOfItem);
 			audioManager.Play("FruitPickup");
-			foods.food.Remove(gameObject);
+			if (nameOfItem == "Fruit")
+			{
+				foods.food.Remove(gameObject);
+			}
 			Destroy(gameObject);
 		}
 	}

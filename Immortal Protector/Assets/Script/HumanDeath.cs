@@ -34,7 +34,7 @@ public class HumanDeath : MonoBehaviour {
 			audioManager.Play("ChildDeath");
 		}
 		var newSoul = Instantiate(soul, transform.position, Quaternion.identity);
-		newSoul.GetComponent<PickMeUp>().howMuchToAdd = Mathf.RoundToInt(c_stats.c_Age);
+		newSoul.GetComponent<PickMeUp>().howMuchToAdd = Mathf.RoundToInt(c_stats.c_Age) * 2;
 		population.RemoveHuman(gameObject);
 		Destroy(gameObject);
 		//maybe also spawn like a gravestone or something

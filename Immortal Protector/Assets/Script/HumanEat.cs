@@ -26,16 +26,20 @@ public class HumanEat : MonoBehaviour {
 	private NavMeshAgent agent;
 	private FoodManager foods;
 	private AudioManager audioManager;
+	private ShopManager shop;
 
 	// Use this for initialization
 	void Start () {
 		foods = FindObjectOfType<FoodManager>().GetComponent<FoodManager>();
+		shop = FindObjectOfType<ShopManager>().GetComponent<ShopManager>();
 		repopulate = GetComponent<HumanRepopulate>();
 		c_Stats = GetComponent<HumanCurrentStats>();
 		growth = GetComponent<HumanGrowth>();
 		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 		agent = GetComponent<NavMeshAgent>();
 		eatTimer = h_Cooldown;
+		h_Recovery += shop.s_hungerIncrease;
+		seesFoodRange += shop.s_h_sightRangeIncrease;
 		canEat = false;
 		destinationSet = false;
 		FoodNearBy();
@@ -84,8 +88,10 @@ public class HumanEat : MonoBehaviour {
 			//check if havent already eaten
 			canEat = eatTimer >= h_Cooldown && Vector3.Distance(transform.position, nearestFood.position) <= seesFoodRange;
 		}
-		if (nearestFood == null)
+		if (nearestFood == null || agent.isStopped)
 		{
+			eatTimer = h_Cooldown;
+			canEat = false;
 			FoodNearBy();
 		}
 		eatTimer += Time.deltaTime;
