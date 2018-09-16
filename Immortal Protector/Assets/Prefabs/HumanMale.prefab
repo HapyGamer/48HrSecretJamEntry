@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4334078663907644}
   - component: {fileID: 33164235508079010}
   - component: {fileID: 23730904810475250}
+  - component: {fileID: 114143338490829540}
   m_Layer: 0
   m_Name: adult
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4810282906029804}
   - component: {fileID: 33850370776754720}
   - component: {fileID: 23435051280760238}
+  - component: {fileID: 114349824370761816}
   m_Layer: 0
   m_Name: child
   m_TagString: Untagged
@@ -55,6 +57,7 @@ GameObject:
   - component: {fileID: 4003123883105726}
   - component: {fileID: 33858650962553956}
   - component: {fileID: 23310490387791288}
+  - component: {fileID: 114274222709170026}
   m_Layer: 0
   m_Name: teen
   m_TagString: Untagged
@@ -371,17 +374,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4973a428204b434593dd43e3e85f405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agingPerSecond: 1
+  agingPerSecond: 0.2
   maxSpeedAge: 40
-  hungerDepletedPerSecond: 2
+  hungerDepletedPerSecond: 0.5
   teenAge: 13
   adultAge: 25
-  adultMat: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
-  teenMat: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
-  childMat: {fileID: 2100000, guid: 9b59f2406cace4a42ad2a822aa5a7c48, type: 3}
-  adult: {fileID: 0}
-  teen: {fileID: 0}
-  childCreature: {fileID: 0}
+  isTeen: 0
+  isAdult: 0
+--- !u!114 &114143338490829540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220821971108074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  end: {fileID: 2100000, guid: d732d8694a076204f969f254f00ded01, type: 2}
+  isChild: 0
+  isTeen: 0
+  isAdult: 1
+--- !u!114 &114274222709170026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617321896544078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  end: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  isChild: 0
+  isTeen: 1
+  isAdult: 0
 --- !u!114 &114346520869913124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,11 +427,29 @@ MonoBehaviour:
   eatingRange: 3
   seesFoodRange: 50
   h_Recovery: 10
-  h_Cooldown: 1
+  h_Cooldown: 5
   adult: {fileID: 0}
   teen: {fileID: 0}
   childCreature: {fileID: 0}
+  canEat: 0
+  eatTimer: 0
   nearestFood: {fileID: 0}
+--- !u!114 &114349824370761816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606740907290090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 9b59f2406cace4a42ad2a822aa5a7c48, type: 3}
+  end: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  isChild: 1
+  isTeen: 0
+  isAdult: 0
 --- !u!114 &114484262966587648
 MonoBehaviour:
   m_ObjectHideFlags: 1

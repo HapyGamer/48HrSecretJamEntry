@@ -28,7 +28,7 @@ GameObject:
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4773431680779000
 Transform:
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1748909111820692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 230.33, y: 7.99, z: 250}
+  m_LocalPosition: {x: 198.3, y: 12, z: 276.6}
   m_LocalScale: {x: 1.2572, y: 7.7461, z: 1.2933}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,4 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruits:
   - {fileID: 1838294497358560, guid: 3fd7427e00078d04c96a987183389af2, type: 2}
-  timeTillNextDrop: 2
+  fruitParent: {fileID: 0}
+  timeTillNextDrop: 10

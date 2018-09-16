@@ -5,6 +5,7 @@ using UnityEngine;
 public class TreeDroppingFruits : MonoBehaviour {
 
 	public GameObject[] fruits;
+	public Transform fruitParent;
 
 	public float timeTillNextDrop = 2;
 
@@ -30,7 +31,7 @@ public class TreeDroppingFruits : MonoBehaviour {
 			{
 				randomPosition *= -1;
 			}
-			var newFood = Instantiate(fruits[Random.Range(0,fruits.Length)], transform.position + randomPosition, Quaternion.identity);
+			var newFood = Instantiate(fruits[Random.Range(0,fruits.Length)], transform.position + randomPosition, Quaternion.identity,fruitParent);
 			foods.AddFood(newFood);
 			foreach(HumanCurrentStats h in population.humans)
 			{

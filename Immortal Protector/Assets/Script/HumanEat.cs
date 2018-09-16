@@ -14,10 +14,6 @@ public class HumanEat : MonoBehaviour {
 	public float h_Recovery;
 	public float h_Cooldown;
 
-	public AudioClip adult;
-	public AudioClip teen;
-	public AudioClip childCreature;
-
 	public bool canEat = false;
 
 	public float eatTimer;
@@ -53,21 +49,24 @@ public class HumanEat : MonoBehaviour {
 		if (!repopulate.isReproducing && c_Stats.c_Hunger < c_Stats.stats.maxHunger && canEat)
 		{
 			//if isnt then go to it
-			if (Vector3.Distance(transform.position, nearestFood.position) > eatingRange)
+			if (nearestFood != null)
 			{
-				agent.isStopped = false;
-				if (!destinationSet)
+				if (Vector3.Distance(transform.position, nearestFood.position) > eatingRange)
 				{
-					agent.destination = nearestFood.position;
-					destinationSet = true;
+					agent.isStopped = false;
+					if (!destinationSet)
+					{
+						agent.destination = nearestFood.position;
+						destinationSet = true;
+					}
 				}
-			}
-			//if is close enough eat it
-			else
-			{
-				agent.isStopped = true;
-				destinationSet = false;
-				AddHunger(h_Recovery);
+				//if is close enough eat it
+				else
+				{
+					agent.isStopped = true;
+					destinationSet = false;
+					AddHunger(h_Recovery);
+				}
 			}
 		}
 	}
@@ -79,6 +78,10 @@ public class HumanEat : MonoBehaviour {
 			//check if any food is in sight range
 			//check if havent already eaten
 			canEat = eatTimer >= h_Cooldown && Vector3.Distance(transform.position, nearestFood.position) <= seesFoodRange;
+		}
+		if (nearestFood == null)
+		{
+			FoodNearBy();
 		}
 		eatTimer += Time.deltaTime;
 	}

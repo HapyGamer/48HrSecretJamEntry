@@ -76,6 +76,7 @@ public class HumanRepopulate : MonoBehaviour {
 					else
 					{
 						agent.isStopped = true;
+						isReproducing = false;
 						destinationSet = false;
 						Reproduce();
 					}
@@ -92,6 +93,10 @@ public class HumanRepopulate : MonoBehaviour {
 			{
 				canReproduce = Vector3.Distance(transform.position, mate.position) <= r_SightDistance && m_Stats.c_Age >= r_AgeRange.x && m_Stats.c_Age <= r_AgeRange.y;
 			}
+		}
+		if (mate == null)
+		{
+			isReproducing = false;
 		}
 		r_CoolDown += Time.deltaTime;
 	}
@@ -145,7 +150,6 @@ public class HumanRepopulate : MonoBehaviour {
 				GetComponent<HumanEat>().eatTimer = 0;
 				GetComponent<HumanEat>().canEat = false;
 				canReproduce = false;
-				isReproducing = false;
 			}
 		}
 	}
