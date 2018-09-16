@@ -19,7 +19,7 @@ public class HumanGrowth : MonoBehaviour {
 
 	private HumanCurrentStats c_Stats;
 	private HumanDeath death;
-	private Renderer mat;
+	//private Renderer mat;
 
 	//private Color black = Color.black;
 	//private Color materialColor;

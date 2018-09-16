@@ -376,7 +376,7 @@ MonoBehaviour:
   hungerDepletedPerSecond: 0
   adult: {fileID: 0}
   teen: {fileID: 0}
-  child: {fileID: 0}
+  childCreature: {fileID: 0}
 --- !u!114 &114346520869913124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,9 +390,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatingRange: 3
   seesFoodRange: 50
+  h_Recovery: 10
+  h_Cooldown: 1
   adult: {fileID: 0}
   teen: {fileID: 0}
-  child: {fileID: 0}
+  childCreature: {fileID: 0}
 --- !u!114 &114484262966587648
 MonoBehaviour:
   m_ObjectHideFlags: 1

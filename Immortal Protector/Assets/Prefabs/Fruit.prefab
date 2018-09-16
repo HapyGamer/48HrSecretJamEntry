@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23700706927671910}
   - component: {fileID: 135809981265190610}
   - component: {fileID: 114708746633710182}
+  - component: {fileID: 54993856633964170}
+  - component: {fileID: 135784719231537612}
   m_Layer: 0
   m_Name: Fruit
   m_TagString: Fruit
@@ -85,6 +87,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838294497358560}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54993856633964170
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838294497358560}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.5
+  m_AngularDrag: 100
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &114708746633710182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,13 +115,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howMuchToAdd: 1
   nameOfItem: Fruit
+--- !u!135 &135784719231537612
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838294497358560}
+  m_Material: {fileID: 13400000, guid: 40b9d5ca338338848a2ceedd50a322d8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135809981265190610
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838294497358560}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 40b9d5ca338338848a2ceedd50a322d8, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
