@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agingPerSecond: 1
   maxSpeedAge: 40
-  hungerDepletedPerSecond: 0
+  hungerDepletedPerSecond: 2
   adult: {fileID: 0}
   teen: {fileID: 0}
   childCreature: {fileID: 0}
@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d89699d61dcb9247b9a6e6cbfbb9f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soul: {fileID: 1984129224287754, guid: 6e41badef712bca4aa5724acce19dd57, type: 2}
 --- !u!114 &114532506711142430
 MonoBehaviour:
   m_ObjectHideFlags: 1

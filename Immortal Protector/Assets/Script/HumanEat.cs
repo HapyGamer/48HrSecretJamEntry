@@ -23,7 +23,7 @@ public class HumanEat : MonoBehaviour {
 	private float eatTimer;
 	private bool destinationSet = false;
 
-	private Transform nearestFood;
+	public Transform nearestFood;
 	private HumanRepopulate repopulate;
 	private HumanCurrentStats c_Stats;
 	private NavMeshAgent agent;
@@ -36,6 +36,8 @@ public class HumanEat : MonoBehaviour {
 		c_Stats = GetComponent<HumanCurrentStats>();
 		agent = GetComponent<NavMeshAgent>();
 		eatTimer = h_Cooldown;
+		canEat = false;
+		destinationSet = false;
 		FoodNearBy();
 	}
 	

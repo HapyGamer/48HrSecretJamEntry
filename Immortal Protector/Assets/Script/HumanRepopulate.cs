@@ -110,7 +110,8 @@ public class HumanRepopulate : MonoBehaviour {
 		float dist = 9999999999;
 		for(int i = 0; i < population.humans.Count; i++)
 		{
-			if (population.humans[i].c_Age >= r_AgeRange.x - m_ageRange && population.humans[i].c_Age < r_AgeRange.x + m_ageRange)
+			if (population.humans[i].c_Age >= r_AgeRange.x - m_ageRange && population.humans[i].c_Age < r_AgeRange.x + m_ageRange 
+				&& isFemale != population.humans[i].GetComponent<HumanRepopulate>().isFemale)
 			{
 				float newDist = Vector3.Distance(population.humans[i].transform.position, transform.position);
 				if (newDist < dist && newDist > 1f)
@@ -137,6 +138,7 @@ public class HumanRepopulate : MonoBehaviour {
 				r_Timer = 0;
 				currentBabies++;
 				r_CoolDown = 0;
+				GetComponent<HumanEat>().FoodNearBy();
 				canReproduce = false;
 				isReproducing = false;
 			}

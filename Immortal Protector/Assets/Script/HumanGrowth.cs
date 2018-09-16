@@ -31,7 +31,7 @@ public class HumanGrowth : MonoBehaviour {
 	void Start () {
 		c_Stats = GetComponent<HumanCurrentStats>();
 		death = GetComponent<HumanDeath>();
-		mat = GetComponent<Renderer>();
+		//mat = GetComponent<Renderer>();
 
 		//materialColor = mat.material.color;
 

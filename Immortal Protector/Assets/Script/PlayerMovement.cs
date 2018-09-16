@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move(move * Time.deltaTime * speed);//move in x or z direction
 		if (move != Vector3.zero)
 		{
-			transform.forward = move;//turn if not facing right way
+			transform.eulerAngles = new Vector3(transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, transform.eulerAngles.z); //turn if not facing right way
 		}
 		
 
