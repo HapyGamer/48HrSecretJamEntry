@@ -258,6 +258,27 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65403407}
   m_CullTransparentMesh: 0
+--- !u!1 &117533248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1606740907290090, guid: 129881f3cbf285445a24648ecbdcd780,
+    type: 2}
+  m_PrefabInternal: {fileID: 1274875071}
+--- !u!114 &117533249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117533248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 9b59f2406cace4a42ad2a822aa5a7c48, type: 3}
+  end: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  isChild: 1
+  isTeen: 0
+  isAdult: 0
 --- !u!1 &147317035
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +758,7 @@ GameObject:
   - component: {fileID: 395136154}
   - component: {fileID: 395136153}
   - component: {fileID: 395136155}
+  - component: {fileID: 395136156}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -781,6 +803,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: []
+--- !u!114 &395136156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395136152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093158c74bb2a2f49a39011a19d80f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trees: []
 --- !u!1 &418498622
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +960,27 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 432490929}
   m_CullTransparentMesh: 0
+--- !u!1 &474057515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1617321896544078, guid: 129881f3cbf285445a24648ecbdcd780,
+    type: 2}
+  m_PrefabInternal: {fileID: 1274875071}
+--- !u!114 &474057516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474057515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  end: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  isChild: 0
+  isTeen: 1
+  isAdult: 0
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1914,27 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863903415}
   m_CullTransparentMesh: 0
+--- !u!1 &882239962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1988336389513012, guid: 40397dc4aac1bb042b31be28705b5e0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1556129795}
+--- !u!114 &882239963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882239962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 9b59f2406cace4a42ad2a822aa5a7c48, type: 3}
+  end: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  isChild: 1
+  isTeen: 0
+  isAdult: 0
 --- !u!1 &915050432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,6 +3886,27 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853596406}
   m_CullTransparentMesh: 0
+--- !u!1 &1856732454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1220821971108074, guid: 129881f3cbf285445a24648ecbdcd780,
+    type: 2}
+  m_PrefabInternal: {fileID: 1274875071}
+--- !u!114 &1856732455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856732454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  end: {fileID: 2100000, guid: d732d8694a076204f969f254f00ded01, type: 2}
+  isChild: 0
+  isTeen: 0
+  isAdult: 1
 --- !u!1 &1862700454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4158,6 +4255,27 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2045245035}
   m_CullTransparentMesh: 0
+--- !u!1 &2103847421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1856379818820938, guid: 40397dc4aac1bb042b31be28705b5e0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1556129795}
+--- !u!114 &2103847422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2103847421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  end: {fileID: 2100000, guid: d732d8694a076204f969f254f00ded01, type: 2}
+  isChild: 0
+  isTeen: 0
+  isAdult: 1
 --- !u!1 &2107681853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4404,3 +4522,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2123977984}
   m_CullTransparentMesh: 0
+--- !u!1 &2135010091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902600457434926, guid: 40397dc4aac1bb042b31be28705b5e0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1556129795}
+--- !u!114 &2135010092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135010091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eefe07ede18c7541803aeafc1e95c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginning: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  end: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  isChild: 0
+  isTeen: 1
+  isAdult: 0

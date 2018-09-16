@@ -18,9 +18,9 @@ public class HumanEat : MonoBehaviour {
 	public AudioClip teen;
 	public AudioClip childCreature;
 
-	private bool canEat = false;
+	public bool canEat = false;
 
-	private float eatTimer;
+	public float eatTimer;
 	private bool destinationSet = false;
 
 	public Transform nearestFood;

@@ -411,6 +411,7 @@ MonoBehaviour:
   c_Speed: 0
   c_Hunger: 50
   c_maxBabies: 0
+  c_maxAgeIncrease: 0
 --- !u!114 &114785977444366904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -425,6 +426,11 @@ MonoBehaviour:
   agingPerSecond: 1
   maxSpeedAge: 40
   hungerDepletedPerSecond: 2
+  teenAge: 13
+  adultAge: 25
+  adultMat: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  teenMat: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  childMat: {fileID: 2100000, guid: 9b59f2406cace4a42ad2a822aa5a7c48, type: 3}
   adult: {fileID: 0}
   teen: {fileID: 0}
   childCreature: {fileID: 0}
@@ -446,6 +452,7 @@ MonoBehaviour:
   adult: {fileID: 0}
   teen: {fileID: 0}
   childCreature: {fileID: 0}
+  nearestFood: {fileID: 0}
 --- !u!195 &195714437006337820
 NavMeshAgent:
   m_ObjectHideFlags: 1

@@ -139,6 +139,8 @@ public class HumanRepopulate : MonoBehaviour {
 				currentBabies++;
 				r_CoolDown = 0;
 				GetComponent<HumanEat>().FoodNearBy();
+				GetComponent<HumanEat>().eatTimer = 0;
+				GetComponent<HumanEat>().canEat = false;
 				canReproduce = false;
 				isReproducing = false;
 			}

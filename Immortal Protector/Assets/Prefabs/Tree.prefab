@@ -110,4 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruits:
   - {fileID: 1838294497358560, guid: 3fd7427e00078d04c96a987183389af2, type: 2}
-  timeTillNextDrop: 10
+  timeTillNextDrop: 2
