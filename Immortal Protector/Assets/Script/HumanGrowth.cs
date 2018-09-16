@@ -11,12 +11,8 @@ public class HumanGrowth : MonoBehaviour {
 	public int teenAge = 13;
 	public int adultAge = 25;
 
-	public AudioClip adult;
-	public AudioClip teen;
-	public AudioClip childCreature;
-
-	private bool isTeen = false;
-	private bool isAdult = false;
+	public bool isTeen = false;
+	public bool isAdult = false;
 
 	private HumanCurrentStats c_Stats;
 	private HumanDeath death;

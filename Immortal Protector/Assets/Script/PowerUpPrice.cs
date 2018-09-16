@@ -13,12 +13,14 @@ public class PowerUpPrice : MonoBehaviour {
 	private int currentPrice;
 	private Text text;
 	private PlayerInventory souls;
+	private AudioManager audioManager;
 
 	// Use this for initialization
 	void Start ()
 	{
 		text = transform.GetChild(2).GetComponent<Text>();
 		souls = FindObjectOfType<PlayerInventory>().GetComponent<PlayerInventory>();
+		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 		currentPrice = defaultPrice;
 		SetText();
 	}
@@ -38,6 +40,7 @@ public class PowerUpPrice : MonoBehaviour {
 		if (currentPrice <= souls.item[1].howMuchIHave)
 		{
 			souls.item[1].howMuchIHave -= currentPrice;
+			audioManager.Play("PerkUnlocked");
 			if (powerUpH != null)
 			{
 				powerUpH.PowerUp();

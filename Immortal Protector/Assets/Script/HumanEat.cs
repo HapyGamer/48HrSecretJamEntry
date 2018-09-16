@@ -25,15 +25,19 @@ public class HumanEat : MonoBehaviour {
 
 	public Transform nearestFood;
 	private HumanRepopulate repopulate;
+	private HumanGrowth growth;
 	private HumanCurrentStats c_Stats;
 	private NavMeshAgent agent;
 	private FoodManager foods;
+	private AudioManager audioManager;
 
 	// Use this for initialization
 	void Start () {
 		foods = FindObjectOfType<FoodManager>().GetComponent<FoodManager>();
 		repopulate = GetComponent<HumanRepopulate>();
 		c_Stats = GetComponent<HumanCurrentStats>();
+		growth = GetComponent<HumanGrowth>();
+		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 		agent = GetComponent<NavMeshAgent>();
 		eatTimer = h_Cooldown;
 		canEat = false;
@@ -112,6 +116,18 @@ public class HumanEat : MonoBehaviour {
 		if(c_Stats.c_Hunger > c_Stats.stats.maxHunger)
 		{
 			c_Stats.c_Hunger = c_Stats.stats.maxHunger;
+		}
+		if (growth.isAdult)
+		{
+			audioManager.Play("AdultEat");
+		}
+		else if (growth.isTeen)
+		{
+			audioManager.Play("TeenEat");
+		}
+		else
+		{
+			audioManager.Play("ChildEat");
 		}
 		eatTimer = 0;
 		canEat = false;

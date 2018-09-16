@@ -263,7 +263,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1606740907290090, guid: 129881f3cbf285445a24648ecbdcd780,
     type: 2}
   m_PrefabInternal: {fileID: 1274875071}
---- !u!114 &117533249
+--- !u!114 &117533252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -965,7 +965,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1617321896544078, guid: 129881f3cbf285445a24648ecbdcd780,
     type: 2}
   m_PrefabInternal: {fileID: 1274875071}
---- !u!114 &474057516
+--- !u!114 &474057519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1919,7 +1919,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1988336389513012, guid: 40397dc4aac1bb042b31be28705b5e0e,
     type: 2}
   m_PrefabInternal: {fileID: 1556129795}
---- !u!114 &882239963
+--- !u!114 &882239966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3739,7 +3739,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bbf6b3de16c804391a5cddece7c7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: ChildEat
+    clip: {fileID: 8300000, guid: 8f783568c5f567b4699551f172e497ff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TeenEat
+    clip: {fileID: 8300000, guid: cfd10d720f914a84b93ab9f66628d65c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AdultEat
+    clip: {fileID: 8300000, guid: f6de1a385b9bda94d84646661677945e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ChildDeath
+    clip: {fileID: 8300000, guid: 25434438bdb81b74fada36d40dc34627, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TeenDeath
+    clip: {fileID: 8300000, guid: d340f93c2863a014cb94e1013c195a47, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AdultDeath
+    clip: {fileID: 8300000, guid: 25434438bdb81b74fada36d40dc34627, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Reproduction
+    clip: {fileID: 8300000, guid: d340f93c2863a014cb94e1013c195a47, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FruitDrop
+    clip: {fileID: 8300000, guid: e6fadff6ef2c35843b4a19a65fbdbd6d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FruitPickup
+    clip: {fileID: 8300000, guid: 5a63c46da5150844987b58339091d1da, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 599045e316ffa084c95d2a028c43601f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PerkUnlocked
+    clip: {fileID: 8300000, guid: 0b2a7611ecf23f24f904d1a985bf3849, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1836562654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,7 +3957,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1220821971108074, guid: 129881f3cbf285445a24648ecbdcd780,
     type: 2}
   m_PrefabInternal: {fileID: 1274875071}
---- !u!114 &1856732455
+--- !u!114 &1856732458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4260,7 +4326,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1856379818820938, guid: 40397dc4aac1bb042b31be28705b5e0e,
     type: 2}
   m_PrefabInternal: {fileID: 1556129795}
---- !u!114 &2103847422
+--- !u!114 &2103847425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4527,7 +4593,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1902600457434926, guid: 40397dc4aac1bb042b31be28705b5e0e,
     type: 2}
   m_PrefabInternal: {fileID: 1556129795}
---- !u!114 &2135010092
+--- !u!114 &2135010095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

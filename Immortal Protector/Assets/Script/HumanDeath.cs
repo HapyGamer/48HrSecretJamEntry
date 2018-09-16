@@ -8,15 +8,31 @@ public class HumanDeath : MonoBehaviour {
 
 	private PopulationManager population;
 	private HumanCurrentStats c_stats;
+	private HumanGrowth growth;
+	private AudioManager audioManager;
 
 	private void Start()
 	{
 		population = FindObjectOfType<PopulationManager>().GetComponent<PopulationManager>();
 		c_stats = GetComponent<HumanCurrentStats>();
+		growth = GetComponent<HumanGrowth>();
+		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 	}
 
 	public void Death()
 	{
+		if (growth.isAdult)
+		{
+			audioManager.Play("AdultDeath");
+		}
+		else if (growth.isTeen)
+		{
+			audioManager.Play("TeenDeath");
+		}
+		else
+		{
+			audioManager.Play("ChildDeath");
+		}
 		var newSoul = Instantiate(soul, transform.position, Quaternion.identity);
 		newSoul.GetComponent<PickMeUp>().howMuchToAdd = Mathf.RoundToInt(c_stats.c_Age);
 		population.RemoveHuman(gameObject);

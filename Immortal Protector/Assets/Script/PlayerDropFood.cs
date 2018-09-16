@@ -12,6 +12,7 @@ public class PlayerDropFood : MonoBehaviour {
 	private PopulationManager population;
 	private PlayerInventory inventory;
 	private FoodManager foods;
+	private AudioManager audioManager;
 
 	// Use this for initialization
 	void Start ()
@@ -19,6 +20,7 @@ public class PlayerDropFood : MonoBehaviour {
 		population = FindObjectOfType<PopulationManager>().GetComponent<PopulationManager>();
 		inventory = GetComponent<PlayerInventory>();
 		foods = FindObjectOfType<FoodManager>().GetComponent<FoodManager>();
+		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -38,7 +40,8 @@ public class PlayerDropFood : MonoBehaviour {
 	void DropFood()
 	{
 		if (inventory.item[currentlySelectedFruit].howMuchIHave > 0)
-		{			
+		{
+			audioManager.Play("FruitDrop");
 			var item = Instantiate(inventory.item[currentlySelectedFruit].item, transform.position, Quaternion.identity);
 			inventory.item[currentlySelectedFruit].howMuchIHave--;
 			foods.food.Add(item);

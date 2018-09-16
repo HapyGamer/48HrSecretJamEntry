@@ -38,6 +38,7 @@ public class HumanRepopulate : MonoBehaviour {
 	private Transform mate;
 	private HumanCurrentStats m_Stats;
 	private HumanCurrentStats c_Stats;
+	private AudioManager audioManager;
 	private NavMeshAgent agent;
 	private PopulationManager population;
 
@@ -46,6 +47,7 @@ public class HumanRepopulate : MonoBehaviour {
 	{
 		c_Stats = GetComponent<HumanCurrentStats>();
 		agent = GetComponent<NavMeshAgent>();
+		audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
 		population = FindObjectOfType<PopulationManager>().GetComponent<PopulationManager>();
 	}
 	
@@ -132,6 +134,7 @@ public class HumanRepopulate : MonoBehaviour {
 			r_Timer += Time.deltaTime;
 			if (r_Timer >= r_Duration)
 			{
+				audioManager.Play("Reproduction");
 				var newHuman = Instantiate(baby[Random.Range(0, baby.Length)], transform.position + Vector3.forward, Quaternion.identity);
 				population.AddHuman(newHuman);
 				//once reproduction is done set timer to 0 and reproduce again
