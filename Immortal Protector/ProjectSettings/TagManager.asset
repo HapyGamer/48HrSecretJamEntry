@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HumanMale
   - HumanFemale
+  - Fruit
+  - Tree
   layers:
   - Default
   - TransparentFX

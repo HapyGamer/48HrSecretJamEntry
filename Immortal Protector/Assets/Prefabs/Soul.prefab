@@ -9,48 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1838294497358560}
+  m_RootGameObject: {fileID: 1984129224287754}
   m_IsPrefabAsset: 1
---- !u!1 &1838294497358560
+--- !u!1 &1984129224287754
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4046509797282630}
-  - component: {fileID: 33456796638381816}
-  - component: {fileID: 23700706927671910}
-  - component: {fileID: 135809981265190610}
-  - component: {fileID: 114708746633710182}
-  - component: {fileID: 54993856633964170}
-  - component: {fileID: 135784719231537612}
+  - component: {fileID: 4870492353747890}
+  - component: {fileID: 33876708558188238}
+  - component: {fileID: 23931691267569682}
+  - component: {fileID: 135975741955522436}
+  - component: {fileID: 114081256296921908}
   m_Layer: 0
-  m_Name: Fruit
+  m_Name: Soul
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4046509797282630
+--- !u!4 &4870492353747890
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
+  m_GameObject: {fileID: 1984129224287754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.113, y: 10.712, z: 251.48581}
+  m_LocalPosition: {x: 246.42, y: 10.712, z: 251.48581}
   m_LocalScale: {x: 0.29923, y: 0.29923, z: 0.29923}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23700706927671910
+--- !u!23 &23931691267569682
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
+  m_GameObject: {fileID: 1984129224287754}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 38272604183bf2d42965a0465083aeb3, type: 2}
+  - {fileID: 2100000, guid: 11d16f5bcb33bdd46b0bb66e1e204ea0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,59 +78,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33456796638381816
+--- !u!33 &33876708558188238
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
+  m_GameObject: {fileID: 1984129224287754}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54993856633964170
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.5
-  m_AngularDrag: 100
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &114708746633710182
+--- !u!114 &114081256296921908
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
+  m_GameObject: {fileID: 1984129224287754}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f952f6ad2f83b874d90530850e52f8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   howMuchToAdd: 1
-  nameOfItem: Fruit
---- !u!135 &135784719231537612
+  nameOfItem: Souls
+--- !u!135 &135975741955522436
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
-  m_Material: {fileID: 13400000, guid: 40b9d5ca338338848a2ceedd50a322d8, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135809981265190610
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838294497358560}
+  m_GameObject: {fileID: 1984129224287754}
   m_Material: {fileID: 13400000, guid: 40b9d5ca338338848a2ceedd50a322d8, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1

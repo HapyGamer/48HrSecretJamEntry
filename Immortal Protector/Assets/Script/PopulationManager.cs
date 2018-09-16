@@ -20,5 +20,14 @@ public class PopulationManager : MonoBehaviour {
 		}
 	}
 
+	public void AddHuman(GameObject gameObject)
+	{
+		humans.Add(gameObject.GetComponent<HumanCurrentStats>());
+	}
+
+	public void RemoveHuman(GameObject gameObject)
+	{
+		humans.Remove(gameObject.GetComponent<HumanCurrentStats>());
+	}
 
 }

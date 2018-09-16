@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114785977444366904}
   - component: {fileID: 114873042043604392}
   - component: {fileID: 114643088695726520}
+  - component: {fileID: 82267157552716630}
   m_Layer: 0
   m_Name: HumanFemale
   m_TagString: HumanFemale
@@ -264,6 +265,101 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856379818820938}
   m_Mesh: {fileID: 4300000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+--- !u!82 &82267157552716630
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941767075815182}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114561329795647080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d89699d61dcb9247b9a6e6cbfbb9f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soul: {fileID: 1984129224287754, guid: 6e41badef712bca4aa5724acce19dd57, type: 2}
 --- !u!114 &114643088695726520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,13 +386,15 @@ MonoBehaviour:
   baby:
   - {fileID: 1941767075815182}
   - {fileID: 1683493166638804, guid: 129881f3cbf285445a24648ecbdcd780, type: 2}
-  r_Distance: 5
+  r_Distance: 2
   r_SightDistance: 100
   r_Duration: 2
   r_CoolDownLength: 4
-  isFemale: 0
+  isFemale: 1
+  isReproducing: 0
   m_ageRange: 8
   r_AgeRange: {x: 10, y: 20}
+  reproduceSound: {fileID: 0}
 --- !u!114 &114696400302233964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,6 +411,7 @@ MonoBehaviour:
   c_Speed: 0
   c_Hunger: 50
   c_maxBabies: 0
+  c_maxAgeIncrease: 0
 --- !u!114 &114785977444366904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,7 +425,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agingPerSecond: 1
   maxSpeedAge: 40
-  hungerDepletedPerSecond: 0
+  hungerDepletedPerSecond: 2
+  teenAge: 13
+  adultAge: 25
+  adultMat: {fileID: 2100000, guid: 55c66d9dc9753e74d9a70c9db851a856, type: 3}
+  teenMat: {fileID: 2100000, guid: 3e210adf72d3c244e9101ba35ca96af7, type: 3}
+  childMat: {fileID: 2100000, guid: 9b59f2406cace4a42ad2a822aa5a7c48, type: 3}
+  adult: {fileID: 0}
+  teen: {fileID: 0}
+  childCreature: {fileID: 0}
 --- !u!114 &114873042043604392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,8 +445,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d323439a1fbf83418db66d462f0946c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatingRange: 0
-  seesFoodRange: 0
+  eatingRange: 3
+  seesFoodRange: 50
+  h_Recovery: 10
+  h_Cooldown: 1
+  adult: {fileID: 0}
+  teen: {fileID: 0}
+  childCreature: {fileID: 0}
+  nearestFood: {fileID: 0}
 --- !u!195 &195714437006337820
 NavMeshAgent:
   m_ObjectHideFlags: 1

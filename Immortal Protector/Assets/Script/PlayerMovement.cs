@@ -25,11 +25,12 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
 	{
 		Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));//x z movement
-		controller.Move(move * Time.deltaTime * speed);//move in x or z direction
-		if (move!= Vector3.zero)
+		controller.Move(transform.forward *move.z * Time.deltaTime * speed + transform.right * move.x * Time.deltaTime * speed);//move in x or z direction
+		if (move != Vector3.zero)
 		{
-			transform.forward = move;//turn if not facing right way
+			transform.eulerAngles = new Vector3(transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, transform.eulerAngles.z); //turn if not facing right way
 		}
+		
 
 		velocity.y += Gravity * Time.deltaTime;//add gravity to velocity (could just be a single variable) (no gravity in character controller)
 

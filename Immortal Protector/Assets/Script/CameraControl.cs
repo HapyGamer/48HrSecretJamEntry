@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +21,8 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         cameraOffset = transform.position - PlayerTransform.position;
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
     }
 
     // LateUpdate is called after Update methods

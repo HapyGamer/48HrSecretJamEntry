@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class HumanGrowth : MonoBehaviour {
 
-
-	/// <summary>
-	/// TO DO: MAKE IT SO THE COLOURS INTERPOLATE TO EACH COLOUR WHERE THE FINAL COLOUR IS BLACK MEANING DEATH
-	/// </summary>
-
 	public float agingPerSecond;
 	public float maxSpeedAge;
 	public float hungerDepletedPerSecond;
 
+	public int teenAge = 13;
+	public int adultAge = 25;
+
+	public AudioClip adult;
+	public AudioClip teen;
+	public AudioClip childCreature;
+
+	private bool isTeen = false;
+	private bool isAdult = false;
+
 	private HumanCurrentStats c_Stats;
 	private HumanDeath death;
-	private Renderer mat;
-
-	//private Color black = Color.black;
-	//private Color materialColor;
 
 	private float speedIncreaseRate;
 	private float speedDecreaseRate;
@@ -27,9 +28,6 @@ public class HumanGrowth : MonoBehaviour {
 	void Start () {
 		c_Stats = GetComponent<HumanCurrentStats>();
 		death = GetComponent<HumanDeath>();
-		mat = GetComponent<Renderer>();
-
-		//materialColor = mat.material.color;
 
 		speedIncreaseRate = c_Stats.stats.maxSpeed / maxSpeedAge;
 		speedDecreaseRate = (c_Stats.stats.maxSpeed - c_Stats.stats.minSpeed) / (c_Stats.stats.maxAge - maxSpeedAge);
@@ -41,9 +39,20 @@ public class HumanGrowth : MonoBehaviour {
 		CheckIfHumanIsDead();
 
 		c_Stats.c_Age += agingPerSecond * Time.deltaTime;
-		c_Stats.c_Hunger -= hungerDepletedPerSecond * Time.deltaTime;
-
-		//mat.material.color = Color.Lerp(materialColor, black, c_Stats.c_Age/c_Stats.stats.maxAge);
+		c_Stats.c_Hunger -= hungerDepletedPerSecond * Time.deltaTime;		
+		
+		if (c_Stats.c_Age < adultAge && c_Stats.c_Age >= teenAge && !isTeen)
+		{
+			isTeen = true;
+			transform.GetChild(0).gameObject.SetActive(false);
+			transform.GetChild(1).gameObject.SetActive(true);
+		}
+		else if (c_Stats.c_Age >= adultAge && c_Stats.c_Age > teenAge && !isAdult)
+		{
+			isAdult = true;
+			transform.GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(2).gameObject.SetActive(true);
+		}
 
 		if (c_Stats.c_Age >= maxSpeedAge)
 		{
@@ -59,7 +68,7 @@ public class HumanGrowth : MonoBehaviour {
 
 	void CheckIfHumanIsDead()
 	{
-		if (c_Stats.c_Age >= c_Stats.stats.maxAge || c_Stats.c_Hunger <= 0)
+		if (c_Stats.c_Age >= c_Stats.stats.maxAge + c_Stats.c_maxAgeIncrease || c_Stats.c_Hunger <= 0)
 		{
 			death.Death();
 		}
