@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17695461}
   - component: {fileID: 17695462}
+  - component: {fileID: 17695463}
   m_Layer: 5
   m_Name: PowerUp1
   m_TagString: Untagged
@@ -164,6 +165,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPrice: 500
   increaseAfterPurchase: 400
+  powerUpH: {fileID: 17695463}
+  powerUpT: {fileID: 0}
+--- !u!114 &17695463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 17695460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5e9f616f591ed4f9fb63b3050fc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babiesIncrease: 1
+  h_sightRangeIncrease: 0
+  r_sightRangeIncrease: 0
+  maxAgeIncrease: 0
+  hungerIncrease: 0
 --- !u!1 &65403407
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +568,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 261412985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1076743965}
+        m_MethodName: BuyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &261412985
@@ -595,6 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291741145}
   - component: {fileID: 291741146}
+  - component: {fileID: 291741147}
   m_Layer: 5
   m_Name: PowerUp1 (2)
   m_TagString: Untagged
@@ -637,6 +668,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPrice: 250
   increaseAfterPurchase: 250
+  powerUpH: {fileID: 291741147}
+  powerUpT: {fileID: 0}
+--- !u!114 &291741147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 291741144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5e9f616f591ed4f9fb63b3050fc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babiesIncrease: 0
+  h_sightRangeIncrease: 1
+  r_sightRangeIncrease: 0
+  maxAgeIncrease: 0
+  hungerIncrease: 0
 --- !u!1 &339597794
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418498623}
   - component: {fileID: 418498624}
+  - component: {fileID: 418498625}
   m_Layer: 5
   m_Name: PowerUp1 (4)
   m_TagString: Untagged
@@ -783,6 +833,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPrice: 1250
   increaseAfterPurchase: 2000
+  powerUpH: {fileID: 418498625}
+  powerUpT: {fileID: 0}
+--- !u!114 &418498625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 418498622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5e9f616f591ed4f9fb63b3050fc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babiesIncrease: 0
+  h_sightRangeIncrease: 0
+  r_sightRangeIncrease: 0
+  maxAgeIncrease: 1
+  hungerIncrease: 0
 --- !u!1 &432490929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1183,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 550281478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 291741146}
+        m_MethodName: BuyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &550281478
@@ -2065,6 +2144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076743964}
   - component: {fileID: 1076743965}
+  - component: {fileID: 1076743966}
   m_Layer: 5
   m_Name: PowerUp1 (3)
   m_TagString: Untagged
@@ -2107,6 +2187,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPrice: 350
   increaseAfterPurchase: 250
+  powerUpH: {fileID: 1076743966}
+  powerUpT: {fileID: 0}
+--- !u!114 &1076743966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076743963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5e9f616f591ed4f9fb63b3050fc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babiesIncrease: 0
+  h_sightRangeIncrease: 0
+  r_sightRangeIncrease: 1
+  maxAgeIncrease: 0
+  hungerIncrease: 0
 --- !u!1 &1193074882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,6 +2747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438118513}
   - component: {fileID: 1438118514}
+  - component: {fileID: 1438118515}
   m_Layer: 5
   m_Name: PowerUp1 (5)
   m_TagString: Untagged
@@ -2691,6 +2790,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPrice: 800
   increaseAfterPurchase: 200
+  powerUpH: {fileID: 1438118515}
+  powerUpT: {fileID: 0}
+--- !u!114 &1438118515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438118512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5e9f616f591ed4f9fb63b3050fc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babiesIncrease: 0
+  h_sightRangeIncrease: 0
+  r_sightRangeIncrease: 0
+  maxAgeIncrease: 0
+  hungerIncrease: 1
 --- !u!1 &1451231904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,6 +3173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609790504}
   - component: {fileID: 1609790505}
+  - component: {fileID: 1609790506}
   m_Layer: 5
   m_Name: PowerUp1 (1)
   m_TagString: Untagged
@@ -3098,6 +3216,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPrice: 750
   increaseAfterPurchase: 250
+  powerUpH: {fileID: 0}
+  powerUpT: {fileID: 1609790506}
+--- !u!114 &1609790506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609790503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e941505bc7ceb408fcd056255a6957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDecrease: 0.2
 --- !u!1 &1705673340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,7 +3305,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1705673343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1609790505}
+        m_MethodName: BuyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1705673343
@@ -3967,7 +4110,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2045245038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17695462}
+        m_MethodName: BuyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2045245038
@@ -4079,7 +4233,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2107681856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1438118514}
+        m_MethodName: BuyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2107681856
@@ -4191,7 +4356,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2123977987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 418498624}
+        m_MethodName: BuyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2123977987

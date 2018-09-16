@@ -7,6 +7,8 @@ public class PowerUpPrice : MonoBehaviour {
 
 	public int defaultPrice;
 	public int increaseAfterPurchase;
+	public PowerUpHuman powerUpH;
+	public PowerUpTrees powerUpT;
 
 	private int currentPrice;
 	private Text text;
@@ -36,6 +38,14 @@ public class PowerUpPrice : MonoBehaviour {
 		if (currentPrice <= souls.item[1].howMuchIHave)
 		{
 			souls.item[1].howMuchIHave -= currentPrice;
+			if (powerUpH != null)
+			{
+				powerUpH.PowerUp();
+			}
+			else
+			{
+				powerUpT.PowerUp();
+			}
 			currentPrice += increaseAfterPurchase;
 			SetText();
 		}
