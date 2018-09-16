@@ -54,7 +54,7 @@ public class HumanRepopulate : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		if (currentBabies >= c_Stats.c_maxBabies)
+		if (currentBabies <= c_Stats.c_maxBabies)
 		{
 			if (c_Stats.c_Age >= r_AgeRange.x && c_Stats.c_Age < r_AgeRange.y)//check if within age range and mate nearby
 			{
