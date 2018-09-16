@@ -88,11 +88,14 @@ public class HumanEat : MonoBehaviour {
 		float dist = 999999;
 		for(int i = 0; i < foods.food.Count; i++)
 		{
-			float newDist = Vector3.Distance(transform.position, foods.food[i].transform.position);
-			if (newDist < dist)
+			if (foods.food[i] != null)
 			{
-				dist = newDist;
-				nearestFood = foods.food[i].transform;
+				float newDist = Vector3.Distance(transform.position, foods.food[i].transform.position);
+				if (newDist < dist)
+				{
+					dist = newDist;
+					nearestFood = foods.food[i].transform;
+				}
 			}
 		}
 		if (nearestFood != null)

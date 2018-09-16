@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FoodManager : MonoBehaviour {
@@ -8,11 +9,7 @@ public class FoodManager : MonoBehaviour {
 
 	private void Start()
 	{
-		GameObject[] GO = GameObject.FindGameObjectsWithTag("Fruit");
-		foreach (GameObject g in GO)
-		{
-			food.Add(g);
-		}
+		FindFoods();
 	}
 
 	public void AddFood(GameObject gameObject)
@@ -23,5 +20,19 @@ public class FoodManager : MonoBehaviour {
 	public void RemoveFood(GameObject gameObject)
 	{
 		food.Remove(gameObject);
+		for (var i = food.Count - 1; i > -1; i--)
+		{
+			if (food[i] == null)
+				food.RemoveAt(i);
+		}
+	}
+
+	void FindFoods()
+	{
+		GameObject[] GO = GameObject.FindGameObjectsWithTag("Fruit");
+		foreach (GameObject g in GO)
+		{
+			food.Add(g);
+		}
 	}
 }

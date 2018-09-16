@@ -11,12 +11,14 @@ public class PlayerDropFood : MonoBehaviour {
 
 	private PopulationManager population;
 	private PlayerInventory inventory;
+	private FoodManager foods;
 
 	// Use this for initialization
 	void Start ()
 	{
 		population = FindObjectOfType<PopulationManager>().GetComponent<PopulationManager>();
 		inventory = GetComponent<PlayerInventory>();
+		foods = FindObjectOfType<FoodManager>().GetComponent<FoodManager>();
 	}
 	
 	// Update is called once per frame
@@ -36,9 +38,17 @@ public class PlayerDropFood : MonoBehaviour {
 	void DropFood()
 	{
 		if (inventory.item[currentlySelectedFruit].howMuchIHave > 0)
-		{
-			Instantiate(inventory.item[currentlySelectedFruit].item, transform.position, Quaternion.identity);
+		{			
+			var item = Instantiate(inventory.item[currentlySelectedFruit].item, transform.position, Quaternion.identity);
 			inventory.item[currentlySelectedFruit].howMuchIHave--;
+			foods.food.Add(item);
+			foreach (HumanCurrentStats h in population.humans)
+			{
+				if (!h.GetComponent<HumanRepopulate>().isReproducing)
+				{
+					h.GetComponent<HumanEat>().FoodNearBy();
+				}
+			}
 		}
 	}
 }

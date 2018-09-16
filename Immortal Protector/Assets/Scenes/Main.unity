@@ -539,24 +539,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 500, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &978421633 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1838294497358560, guid: 3fd7427e00078d04c96a987183389af2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1044405699}
---- !u!114 &978421634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 978421633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f952f6ad2f83b874d90530850e52f8fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  howMuchToAdd: 1
-  nameOfItem: Fruit
 --- !u!1001 &1044405699
 Prefab:
   m_ObjectHideFlags: 0
@@ -595,10 +577,6 @@ Prefab:
     - target: {fileID: 4046509797282630, guid: 3fd7427e00078d04c96a987183389af2, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838294497358560, guid: 3fd7427e00078d04c96a987183389af2, type: 2}
-      propertyPath: m_TagString
-      value: Fruit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd7427e00078d04c96a987183389af2, type: 2}
