@@ -25,8 +25,6 @@ public class HumanRepopulate : MonoBehaviour {
 
 	public Vector2 r_AgeRange;
 
-	public AudioClip reproduceSound;
-
 	private bool canReproduce = false;
 	private bool grownUp = false;
 
@@ -78,7 +76,6 @@ public class HumanRepopulate : MonoBehaviour {
 					else
 					{
 						agent.isStopped = true;
-						isReproducing = false;
 						Reproduce();
 					}
 				}
@@ -95,9 +92,10 @@ public class HumanRepopulate : MonoBehaviour {
 				canReproduce = Vector3.Distance(transform.position, mate.position) <= r_SightDistance && m_Stats.c_Age >= r_AgeRange.x && m_Stats.c_Age <= r_AgeRange.y;
 			}
 		}
-		if (mate == null)
+		if (mate == null || currentBabies >= c_Stats.c_maxBabies)
 		{
 			isReproducing = false;
+			canReproduce = false;
 		}
 		r_CoolDown += Time.deltaTime;
 	}
@@ -140,6 +138,7 @@ public class HumanRepopulate : MonoBehaviour {
 				GetComponent<HumanEat>().FoodNearBy();
 				GetComponent<HumanEat>().eatTimer = 0;
 				GetComponent<HumanEat>().canEat = false;
+				isReproducing = false;
 				canReproduce = false;
 			}
 		}

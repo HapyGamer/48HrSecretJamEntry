@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1683493166638804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 238.08, y: 5.88, z: 262.36}
+  m_LocalPosition: {x: 200.7, y: 11.5, z: 276.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4810282906029804}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4973a428204b434593dd43e3e85f405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agingPerSecond: 1
+  agingPerSecond: 0.3
   maxSpeedAge: 15
   hungerDepletedPerSecond: 0.5
   teenAge: 13
@@ -402,7 +402,6 @@ MonoBehaviour:
   isReproducing: 0
   m_ageRange: 8
   r_AgeRange: {x: 13, y: 25}
-  reproduceSound: {fileID: 0}
 --- !u!195 &195498088999111342
 NavMeshAgent:
   m_ObjectHideFlags: 1

@@ -88,7 +88,7 @@ public class HumanEat : MonoBehaviour {
 			//check if havent already eaten
 			canEat = eatTimer >= h_Cooldown && Vector3.Distance(transform.position, nearestFood.position) <= seesFoodRange;
 		}
-		if (nearestFood == null || agent.isStopped)
+		else if (nearestFood == null)
 		{
 			eatTimer = h_Cooldown;
 			canEat = false;
