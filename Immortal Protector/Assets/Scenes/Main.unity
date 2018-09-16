@@ -4535,28 +4535,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114346520869913124, guid: 129881f3cbf285445a24648ecbdcd780,
-        type: 2}
-      propertyPath: seesFoodRange
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114558948876415514, guid: 129881f3cbf285445a24648ecbdcd780,
-        type: 2}
-      propertyPath: r_SightDistance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114558948876415514, guid: 129881f3cbf285445a24648ecbdcd780,
-        type: 2}
-      propertyPath: r_AgeRange.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 114558948876415514, guid: 129881f3cbf285445a24648ecbdcd780,
-        type: 2}
-      propertyPath: r_AgeRange.y
-      value: 25
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 82345805354858752, guid: 129881f3cbf285445a24648ecbdcd780, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 129881f3cbf285445a24648ecbdcd780, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1283673029 stripped
@@ -5558,28 +5537,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114873042043604392, guid: 40397dc4aac1bb042b31be28705b5e0e,
-        type: 2}
-      propertyPath: seesFoodRange
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114643088695726520, guid: 40397dc4aac1bb042b31be28705b5e0e,
-        type: 2}
-      propertyPath: r_SightDistance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114643088695726520, guid: 40397dc4aac1bb042b31be28705b5e0e,
-        type: 2}
-      propertyPath: r_AgeRange.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 114643088695726520, guid: 40397dc4aac1bb042b31be28705b5e0e,
-        type: 2}
-      propertyPath: r_AgeRange.y
-      value: 25
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 82267157552716630, guid: 40397dc4aac1bb042b31be28705b5e0e, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40397dc4aac1bb042b31be28705b5e0e, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1577323040

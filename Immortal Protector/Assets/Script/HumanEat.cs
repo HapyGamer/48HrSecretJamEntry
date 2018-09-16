@@ -69,6 +69,11 @@ public class HumanEat : MonoBehaviour {
 				}
 			}
 		}
+		if (repopulate.isReproducing)
+		{
+			canEat = false;
+			nearestFood = null;
+		}
 	}
 
 	private void Update()
